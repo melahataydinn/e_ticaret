@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewData["Title"] = "Detay";
+    Layout = "~/Views/Shared/_loginHomeLayout.cshtml";
+}
+
+
+<div class="container-fluid bg-secondary mb-5">
+    <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+        <h1 class="font-weight-semi-bold text-uppercase mb-3">Ürün Detay</h1>
+        <div class="d-inline-flex">
+            <p class="m-0"><a href="">Anasayfa</a></p>
+            <p class="m-0 px-2">-</p>
+            <p class="m-0">Ürün Detay</p>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Shop Detail Start -->
+
+<div class="container-fluid py-5">
+    <div class="row px-xl-5">
+        @if (Model is maku_eticaret.Models.Products product)
+        {
+            <div class="col-lg-5 pb-5">
+                <div id="product-carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner border">
+                        <div class="carousel-item active">
+                            <img class="w-100 h-100" src="/Urunler/@product.ProductPicture" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="w-100 h-100" src="/Urunler/@product.ProductPicture" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="w-100 h-100" src="/Urunler/@product.ProductPicture" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="w-100 h-100" src="/Urunler/@product.ProductPicture" alt="Image">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#product-carousel" data-slide="prev">
+                        <i class="fa fa-2x fa-angle-left text-dark"></i>
+                    </a>
+                    <a class="carousel-control-next" href="#product-carousel" data-slide="next">
+                        <i class="fa fa-2x fa-angle-right text-dark"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-7 pb-5">
+                <h3 class="font-weight-semi-bold">@product.ProductName</h3>
+                <h3 class="font-weight-semi-bold mb-4">@product.ProductPrice</h3>
+                <p class="mb-4">@product.ProductDescription</p>
+
+                <div class="card-footer d-flex justify-content-between bg-light border">
+                    <a href="/Cart/Add/@product.ProductId" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Sepette Ekle</a>
+                </div>
+                <div class="col-lg-3 col-6 text-right">
+                    <a href="/Cart/KullaniciIndex" class="btn border">
+                        <i class="fas fa-heart text-primary"></i>
+                        <span class="badge">Sepet'e Git</span>
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+
+
+
+</div>
+

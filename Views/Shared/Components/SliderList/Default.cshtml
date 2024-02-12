@@ -1,0 +1,32 @@
+﻿@model List<maku_eticaret.Models.slider>
+
+<div id="header-carousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        @{
+            int i = 0;
+            string klas = "";
+        }
+        @foreach (var item in Model)
+        {
+            klas = (i == 0) ? "active" : "";
+
+            <div class="carousel-item @klas" style="height: 410px;">
+                <img class="d-block w-100" src="/Slider/@item.SliderImage" alt="Image">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                
+                </div>
+            </div>
+            i++;
+        }
+    </div>
+    <a class="carousel-control-prev" href="#header-carousel" role="button" data-slide="prev">
+        <div class="btn btn-dark" style="width: 45px; height: 45px;">
+            <span class="carousel-control-prev-icon mb-n2" aria-hidden="true"></span>
+        </div>
+    </a>
+    <a class="carousel-control-next" href="#header-carousel" role="button" data-slide="next">
+        <div class="btn btn-dark" style="width: 45px; height: 45px;">
+            <span class="carousel-control-next-icon mb-n2" aria-hidden="true"></span>
+        </div>
+    </a>
+</div>
